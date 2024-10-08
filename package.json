@@ -1,0 +1,23 @@
+{
+  "name": "desafio_pontos_interesse",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mysql2": "^3.11.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/mysql": "^2.15.26"
+  }
+}
