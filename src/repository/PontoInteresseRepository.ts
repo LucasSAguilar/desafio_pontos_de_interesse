@@ -1,13 +1,13 @@
-class PontoInteresseRepository {
-  private dbConnection: any;
+import mysql from "mysql2/promise";
 
-  constructor(dbConnection: any) {
+class PontoInteresseRepository {
+  private dbConnection: mysql.Pool;
+
+  constructor(dbConnection: mysql.Pool) {
     this.dbConnection = dbConnection;
   }
 
-  public coletarPontoInteressePorId(id: number) {
-    // Codigo para acessar o ponto...
-  }
+  public coletarPontoInteressePorId(id: number) {}
 }
 
 export default PontoInteresseRepository;

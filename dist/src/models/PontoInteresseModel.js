@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class PontoInteresseModel {
     constructor(nome, posX, posY) {
         this.nome = nome;
@@ -27,4 +25,4 @@ class PontoInteresseModel {
         this.posY = posY;
     }
 }
-exports.default = PontoInteresseModel;
+export default PontoInteresseModel;

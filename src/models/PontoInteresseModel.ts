@@ -1,3 +1,4 @@
+
 class PontoInteresseModel {
   private nome: string;
   private posX: number;
