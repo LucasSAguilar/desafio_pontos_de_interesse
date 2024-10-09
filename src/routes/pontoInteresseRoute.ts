@@ -7,6 +7,10 @@ const pontoInteresseRoutes = (app: Express) => {
   app.get("/pontos-interesse", (req: Request, res: Response) => {
     controllerPontoInteresse.enviaHello(req, res);
   });
+
+  app.post("/pontos-interesse/novo", (req: Request, res: Response) => {
+    controllerPontoInteresse.recebeDados(req, res);
+  });
 };
 
 export default pontoInteresseRoutes;
