@@ -1,7 +1,8 @@
-import express from "express";
+import express, { json } from "express";
 import pontoInteresseRoutes from "./src/routes/pontoInteresseRoute.js";
 const app = express();
 const PORT = 3000;
+app.use(json());
 app.get("/", (req, res) => {
     res.send("Olá, mundo!");
 });
