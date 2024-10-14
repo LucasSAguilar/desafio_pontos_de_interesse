@@ -1,7 +1,4 @@
 import express, { json } from "express";
-import PontoInteresseModel from "./src/models/PontoInteresseModel.js";
-import pool from "./src/config/database.js";
-import PontoInteresseRepository from "./src/repository/PontoInteresseRepository.js";
 import pontoInteresseRoutes from "./src/routes/pontoInteresseRoute.js";
 
 const app = express();

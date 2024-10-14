@@ -1,6 +1,4 @@
 import { Request, Response } from "express";
-import validaPontoInteresse from "../validation/pontoInteresseValidator.js";
-import PontoInteresseModel from "../models/PontoInteresseModel.js";
 import PontoInteresseService from "../services/PontoInteresseService.js";
 
 class pontoInteresseController {
