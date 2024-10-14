@@ -13,7 +13,6 @@ class pontoInteresseController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const listaPontos = yield PontoInteresseService.coletarTodosPontos();
-                console.log(listaPontos);
                 res.status(200).json({ listaPontos });
             }
             catch (error) {

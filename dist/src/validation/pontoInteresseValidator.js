@@ -16,7 +16,6 @@ const pontoInteresseSchema = z.object({
 function validaPontoInteresse(dadoRecebido) {
     try {
         const pontoInteresse = pontoInteresseSchema.parse(dadoRecebido);
-        console.log(pontoInteresse);
         return pontoInteresse;
     }
     catch (error) {
