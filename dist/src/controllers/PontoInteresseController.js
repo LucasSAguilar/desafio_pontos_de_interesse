@@ -5,11 +5,10 @@ class pontoInteresseController {
     }
     recebeDados(req, res) {
         try {
-            const pontoInteresse = validaPontoInteresse(req.body);
+            const novoPontoInteresse = validaPontoInteresse(req.body);
             res.status(200).send(`Ponto de interesse aceito com sucesso`);
         }
         catch (error) {
-            // Verifique se o erro é uma instância de Error antes de acessar .message
             if (error instanceof Error) {
                 res.status(400).json({ error: error.message });
             }

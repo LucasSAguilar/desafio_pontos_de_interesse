@@ -16,12 +16,11 @@ const pontoInteresseSchema = z.object({
 function validaPontoInteresse(dadoRecebido) {
     try {
         const pontoInteresse = pontoInteresseSchema.parse(dadoRecebido);
+        console.log(pontoInteresse);
         return pontoInteresse;
     }
     catch (error) {
-        // Verifique se o erro é uma instância de ZodError
         if (error instanceof z.ZodError) {
-            // Pegue a primeira mensagem de erro
             const mensagemErro = error.errors[0].message;
             throw new Error(`Erro: ${mensagemErro}`);
         }

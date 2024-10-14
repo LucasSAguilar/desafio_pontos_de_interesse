@@ -18,6 +18,8 @@ const pontoInteresseSchema = z.object({
 function validaPontoInteresse(dadoRecebido: unknown) {
     try {
       const pontoInteresse = pontoInteresseSchema.parse(dadoRecebido);
+      console.log(pontoInteresse);
+      
       return pontoInteresse;
     } catch (error) {
       if (error instanceof z.ZodError) {
