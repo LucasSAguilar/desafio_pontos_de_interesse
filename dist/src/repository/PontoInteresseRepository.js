@@ -31,5 +31,18 @@ class PontoInteresseRepository {
             }
         });
     }
+    coletarTodos() {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const query = "SELECT * FROM PONTOS_INTERESSE";
+                const [rows, fields] = yield this.dbConnection.query(query);
+                return rows;
+            }
+            catch (error) {
+                console.error(`Ocorreu um erro: ${error}`);
+                throw new Error(`Ocorreu um erro: ${error}`);
+            }
+        });
+    }
 }
 export default PontoInteresseRepository;

@@ -13,6 +13,20 @@ class PontoInteresseService {
 
     return resposta;
   }
+
+  public static async coletarTodosPontos() {
+    const pontoInteresseRepository = new PontoInteresseRepository();
+
+    try {
+      const dados = await pontoInteresseRepository.coletarTodos();
+      console.log(dados);
+      return dados;
+    } catch (error) {
+      console.error(`Erro ao coletar pontos de interesse: ${error}`);
+      throw error;
+    }
+  }
+
 }
 
 export default PontoInteresseService;

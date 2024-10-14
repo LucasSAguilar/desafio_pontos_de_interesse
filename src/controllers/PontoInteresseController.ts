@@ -4,8 +4,14 @@ import PontoInteresseModel from "../models/PontoInteresseModel.js";
 import PontoInteresseService from "../services/PontoInteresseService.js";
 
 class pontoInteresseController {
-  public enviaHello(req: Request, res: Response) {
-    res.send("Hello, Ponto Interesse");
+  public async exibePontos(req: Request, res: Response) {
+    try {
+      const listaPontos = await PontoInteresseService.coletarTodosPontos();
+      
+      res.status(200).json({ listaPontos });
+    } catch (error) {
+      res.status(400).json({ error: error });
+    }
   }
 
   public recebeDados(req: Request, res: Response) {

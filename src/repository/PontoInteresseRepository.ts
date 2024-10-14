@@ -29,6 +29,17 @@ class PontoInteresseRepository {
       throw new Error(`Ocorreu um erro: ${error}`);
     }
   }
+
+  public async coletarTodos() {
+    try {
+      const query = "SELECT * FROM PONTOS_INTERESSE";
+      const [rows, fields] = await this.dbConnection.query(query);
+      return rows;
+    } catch (error) {
+      console.error(`Ocorreu um erro: ${error}`)
+      throw new Error(`Ocorreu um erro: ${error}`)
+    }
+  }
 }
 
 export default PontoInteresseRepository;
