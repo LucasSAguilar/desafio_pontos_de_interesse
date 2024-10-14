@@ -24,5 +24,9 @@ class PontoInteresseModel {
     set setPosY(posY) {
         this.posY = posY;
     }
+    // ==================
+    static converterDoJson(data) {
+        return new PontoInteresseModel(data.nome, data.posX, data.posY);
+    }
 }
 export default PontoInteresseModel;

@@ -1,12 +1,13 @@
-import validaPontoInteresse from "../validation/pontoInteresseValidator.js";
+import PontoInteresseService from "../services/PontoInteresseService.js";
 class pontoInteresseController {
     enviaHello(req, res) {
         res.send("Hello, Ponto Interesse");
     }
     recebeDados(req, res) {
         try {
-            const novoPontoInteresse = validaPontoInteresse(req.body);
-            res.status(200).send(`Ponto de interesse aceito com sucesso`);
+            const response = PontoInteresseService.criarNovoPontoInteresse(req.body);
+            console.log(response);
+            res.status(200).send(`Ponto de interesse aceito e salvo com sucesso`);
         }
         catch (error) {
             if (error instanceof Error) {

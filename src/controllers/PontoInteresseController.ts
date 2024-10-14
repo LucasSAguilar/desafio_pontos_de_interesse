@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import validaPontoInteresse from "../validation/pontoInteresseValidator.js";
 import PontoInteresseModel from "../models/PontoInteresseModel.js";
+import PontoInteresseService from "../services/PontoInteresseService.js";
 
 class pontoInteresseController {
   public enviaHello(req: Request, res: Response) {
@@ -9,8 +10,8 @@ class pontoInteresseController {
 
   public recebeDados(req: Request, res: Response) {
     try {
-      const novoPontoInteresse = validaPontoInteresse(req.body);
-      res.status(200).send(`Ponto de interesse aceito com sucesso`);
+      const response = PontoInteresseService.criarNovoPontoInteresse(req.body);
+      res.status(200).send(`Ponto de interesse aceito e salvo com sucesso`);
     } catch (error) {
       if (error instanceof Error) {
         res.status(400).json({ error: error.message });

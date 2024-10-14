@@ -1,4 +1,5 @@
 import z from "zod";
+import PontoInteresse from "../interfaces/PontoInteresseInterface.js";
 
 const pontoInteresseSchema = z.object({
   nome: z

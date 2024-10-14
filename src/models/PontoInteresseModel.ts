@@ -1,3 +1,4 @@
+import PontoInteresseInterface from "../interfaces/PontoInteresseInterface.js";
 
 class PontoInteresseModel {
   private nome: string;
@@ -36,8 +37,9 @@ class PontoInteresseModel {
 
   // ==================
 
-  
-
+  public static converterDoJson(data: PontoInteresseInterface): PontoInteresseModel {
+    return new PontoInteresseModel(data.nome, data.posX, data.posY);
+  }
 }
 
 export default PontoInteresseModel;
