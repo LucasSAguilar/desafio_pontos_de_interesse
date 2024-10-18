@@ -1,6 +1,7 @@
 interface DistanciaMaximaInterface {
-  posX: string;
-  posY: string;
+  posX: number;
+  posY: number;
+  dmax: number;
 }
 
 export default DistanciaMaximaInterface;

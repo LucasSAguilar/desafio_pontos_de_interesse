@@ -14,12 +14,11 @@ class PontoInteresseService {
     return resposta;
   }
 
-  public static async coletarTodosPontos() {
+  public static async coletarTodosPontos(): Promise<PontoInteresseModel[]> {
     const pontoInteresseRepository = new PontoInteresseRepository();
 
     try {
       const dados = await pontoInteresseRepository.coletarTodos();
-      console.log(dados);
       return dados;
     } catch (error) {
       console.error(`Erro ao coletar pontos de interesse: ${error}`);

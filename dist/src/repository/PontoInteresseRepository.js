@@ -7,6 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import PontoInteresseModel from "../models/PontoInteresseModel.js";
 import pool from "../config/database.js";
 class PontoInteresseRepository {
     // =========================
@@ -35,8 +36,11 @@ class PontoInteresseRepository {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const query = "SELECT * FROM PONTOS_INTERESSE";
-                const [rows, fields] = yield this.dbConnection.query(query);
-                return rows;
+                const [rows] = yield this.dbConnection.query(query);
+                const listaPontosInteresse = rows.map((ponto) => {
+                    return new PontoInteresseModel(ponto.nome, ponto.posX, ponto.posY);
+                });
+                return listaPontosInteresse;
             }
             catch (error) {
                 console.error(`Ocorreu um erro: ${error}`);

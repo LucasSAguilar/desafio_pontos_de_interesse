@@ -1,6 +1,7 @@
 import mysql from "mysql2/promise";
 import PontoInteresseModel from "../models/PontoInteresseModel.js";
 import pool from "../config/database.js";
+import PontoInteresseInterface from "../interfaces/PontoInteresseInterface.js";
 
 class PontoInteresseRepository {
   private dbConnection: mysql.Pool;
@@ -30,11 +31,14 @@ class PontoInteresseRepository {
     }
   }
 
-  public async coletarTodos() {
+  public async coletarTodos(): Promise<PontoInteresseModel[]> {
     try {
       const query = "SELECT * FROM PONTOS_INTERESSE";
-      const [rows, fields] = await this.dbConnection.query(query);
-      return rows;
+      const [rows]: any = await this.dbConnection.query(query);
+      const listaPontosInteresse: PontoInteresseModel[] = rows.map((ponto: PontoInteresseInterface)=>{
+        return new PontoInteresseModel(ponto.nome, ponto.posX, ponto.posY)
+      })
+      return listaPontosInteresse;
     } catch (error) {
       console.error(`Ocorreu um erro: ${error}`)
       throw new Error(`Ocorreu um erro: ${error}`)

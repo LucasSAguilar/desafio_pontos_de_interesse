@@ -23,7 +23,6 @@ class PontoInteresseService {
             const pontoInteresseRepository = new PontoInteresseRepository();
             try {
                 const dados = yield pontoInteresseRepository.coletarTodos();
-                console.log(dados);
                 return dados;
             }
             catch (error) {
